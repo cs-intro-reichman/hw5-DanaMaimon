@@ -2,13 +2,9 @@ public class Wordle {
 
     // Reads all words from dictionary filename into a String array.
     public static String[] readDictionary(String filename) {
-        String[] secretWordle = new String[258];
         In in = new In(filename);
-        for (int i = 0; i < secretWordle.length - 1; i ++)
-        {
-            secretWordle[i] = in.readString();
-        }
-        return secretWordle;
+        String[] dictionary = in.readAllStrings();
+        return dictionary;
     }
 
     // Choose a random secret word from the dictionary. 
